@@ -25,9 +25,8 @@ RUN apt-get install -y \
     php8.0-zip \
     libapache2-mod-php8.0
 
-# Download the specified Azuriom tag
-ARG AZURIOM_TAG=v1.1.0
-RUN curl -L https://github.com/Azuriom/AzuriomInstaller/releases/download/${AZURIOM_TAG}/AzuriomInstaller.zip -o /tmp/AzuriomInstaller.zip
+# Download the Azuriom installer
+RUN curl -L https://github.com/Azuriom/AzuriomInstaller/releases/latest/download/AzuriomInstaller.zip -o /tmp/AzuriomInstaller.zip
 
 # Extract the archive to the web root
 RUN unzip /tmp/AzuriomInstaller.zip -d /var/www/azuriom
