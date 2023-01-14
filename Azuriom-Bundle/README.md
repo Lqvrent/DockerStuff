@@ -18,7 +18,7 @@ You can configure the Azuriom server by editing the `docker-compose.yml` file.<b
 To change the database credentials, edit the `POSTGRES_USER`, `POSTGRES_PASSWORD` and `POSTGRES_DB` environment variables.<br />
 By default, they are set to `root`, `123456` and `azuriom` respectively.<br /><br />
 If you want to use apache or nginx, you can change the `lqvrent/azuriom-apache:latest` by `lqvrent/azuriom-nginx:latest` and vice versa.<br /><br />
-If you want to edit on the fly Azuriom's files or the database, you can change the `volumes` section to `./azuriom:/var/www/azuriom` and `./postgres:/var/lib/postgresql/data` respectively.<br />
+If you want to edit on the fly Azuriom's files or the database, you can change the `volumes` section to `./azuriom:/var/www/azuriom` and `./postgres:/var/lib/postgresql/data` respectively. This will cause the website being more slow. See the *note* section in the usage if you got a problem in runtime.<br />
 
 ## ⚙️ Configuration - Azuriom installation
 When you first start the Azuriom server, you will be asked to install Azuriom.<br />
@@ -42,6 +42,17 @@ docker-compose down
 **Note:** Sometimes, with mounted volumes, the permissions of the files are not correct.<br />
 To fix this, you can run the following command:
 ```bash
+docker exec -it Azuriom chmod -R 755 /var/www/azuriom && \
+docker exec -it Azuriom chown -R www-data:www-data /var/www/azuriom
+```
+Also, if mounting the database, you may need to run the following command:
+```bash
+docker exec -it Azuriom chown -R postgres:postgres /var/lib/postgresql/data
+```
+And if mounting the Azuriom files, you may see they are not appearing in the container.<br />
+To fix this, you can manually re-install Azuriom by running the following command:
+```bash
+docker exec -it Azuriom unzip /tmp/AzuriomInstaller.zip -d /var/www/azuriom && \
 docker exec -it Azuriom chmod -R 755 /var/www/azuriom && \
 docker exec -it Azuriom chown -R www-data:www-data /var/www/azuriom
 ```
