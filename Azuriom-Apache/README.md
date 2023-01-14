@@ -1,5 +1,5 @@
 # Azuriom Apache
-This Docker image runs an Azuriom server with PHP 8.1 and Apache 2.4.<br />
+This Docker image runs an Azuriom server with PHP 8.0 and Apache 2.4.<br />
 Each tag represents a version of Azuriom, see [the tags](https://hub.docker.com/r/lqvrent/azuriom-apache/tags) for more information.
 
 ## 🔗 Quick reference
@@ -39,5 +39,5 @@ docker build -t azuriom-apache:local .
 
 ## 📝 Notes
 - This image is NOT meant to be used in production, it is only for testing purposes.
-- This image was tested with PHP 8.1, Apache 2.4 and Azuriom v1.0.12, more recent versions may work but are not guaranteed to work.
+- This image was tested with PHP 8.0, Apache 2.4 and Azuriom v1.0.12, more recent versions may work but are not guaranteed to work.
 - This image does NOT include a database. You will need to provide one yourself (or use the [bundle](/Azuriom-Bundle)).

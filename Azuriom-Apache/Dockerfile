@@ -43,4 +43,4 @@ RUN chown -R www-data:www-data /var/www/azuriom
 
 EXPOSE 80
 
-CMD apachectl -D FOREGROUND
+CMD ["apachectl", "-D", "FOREGROUND"]
