@@ -40,4 +40,4 @@ docker build -t azuriom-apache:local .
 ## 📝 Notes
 - This image is NOT meant to be used in production, it is only for testing purposes.
 - This image was tested with PHP 8.0, Apache 2.4 and Azuriom v1.0.12, more recent versions may work but are not guaranteed to work.
-- This image does NOT include a database. You will need to provide one yourself (or use the [bundle](/Azuriom-Bundle)).
+- This image does NOT include a database. You will need to provide one yourself (or use the [bundle](https://github.com/Lqvrent/DockerStuff/tree/main/Azuriom-Bundle)).
