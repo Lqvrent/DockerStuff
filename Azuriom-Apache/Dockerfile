@@ -23,6 +23,9 @@ RUN apt-get install -y \
     php8.0-xmlwriter \
     php8.0-curl \
     php8.0-zip \
+    php8.0-sqlite3 \
+    php8.0-mysql \
+    php8.0-pgsql \
     libapache2-mod-php8.0
 
 # Download the Azuriom installer

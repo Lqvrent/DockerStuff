@@ -23,7 +23,10 @@ RUN apt-get install -y \
     php8.0-xml \
     php8.0-xmlwriter \
     php8.0-curl \
-    php8.0-zip
+    php8.0-zip \
+    php8.0-sqlite3 \
+    php8.0-mysql \
+    php8.0-pgsql
 
 # Download the Azuriom installer
 RUN curl -L https://github.com/Azuriom/AzuriomInstaller/releases/latest/download/AzuriomInstaller.zip -o /tmp/AzuriomInstaller.zip
