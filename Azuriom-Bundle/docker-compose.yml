@@ -1,0 +1,37 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:15-alpine
+    restart: always
+    container_name: Postgres
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: azuriom
+    volumes:
+      - azuriom-bdl-db-data:/var/lib/postgresql/data
+    networks:
+      - azuriom-bdl-network
+    ports:
+      - "5432:5432"
+
+  azuriom:
+    image: lqvrent/azuriom-apache:latest
+    restart: always
+    container_name: Azuriom
+    volumes:
+      - azuriom-bdl-data:/var/www/azuriom
+    depends_on:
+      - postgres
+    networks:
+      - azuriom-bdl-network
+    ports:
+      - "80:80"
+      - "443:443"
+
+networks:
+  azuriom-bdl-network:
+
+volumes:
+  azuriom-bdl-db-data:
+  azuriom-bdl-data:
