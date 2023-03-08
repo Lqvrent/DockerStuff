@@ -1,6 +1,6 @@
 # Azuriom Nginx
-This Docker image runs an Azuriom server with PHP 8.0 and Nginx 1.18.<br />
-Each tag represents a version of Azuriom, see [the tags](https://hub.docker.com/r/lqvrent/azuriom-nginx/tags) for more information.
+This Docker image runs the Azuriom installer with PHP 8.0 and Nginx 1.18.<br />
+The installer will install the latest version of Azuriom when the container is started.<br />
 
 ## 🔗 Quick reference
 - Maintained by: <br />
@@ -16,13 +16,13 @@ For more information, see [Azuriom's website](https://azuriom.com/).
 
 ## 🚀 Usage
 Monting a volume is required to store the Azuriom files.<br />
-Here, we are mounting a volume named `azuriom-data` (don't forget to replace `AZURIOM_VERSION` with the desired version).
+Here, we are mounting a volume named `azuriom-data`:
 ```bash
 docker run -d \
     -p 80:80 \
     -v azuriom-data:/var/www/azuriom \
     --name azuriom \
-    lqvrent/azuriom-nginx:AZURIOM_VERSION
+    lqvrent/azuriom-nginx
 ```
 **Note:** Sometimes, with mounted volumes, the permissions of the files are not correct.<br />
 To fix this, you can run the following command:
@@ -39,5 +39,5 @@ docker build -t azuriom-nginx:local .
 
 ## 📝 Notes
 - This image is NOT meant to be used in production, it is only for testing purposes.
-- This image was tested with PHP 8.0, Nginx 1.18 and Azuriom v1.0.12, more recent versions may work but are not guaranteed to work.
+- This image was tested with PHP 8.0, Nginx 1.18 and Azuriom v1.0.15, more recent versions may work but are not guaranteed to work.
 - This image does NOT include a database. You will need to provide one yourself (or use the [bundle](https://github.com/Lqvrent/DockerStuff/tree/main/Azuriom-Bundle)).
