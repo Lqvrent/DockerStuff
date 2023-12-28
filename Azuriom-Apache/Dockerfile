@@ -12,21 +12,21 @@ RUN apt-get install -y \
     unzip \
     apache2 \
     openssl \
-    php8.0 \
-    php8.0-bcmath \
-    php8.0-ctype \
-    php8.0-fpm \
-    php8.0-mbstring \
-    php8.0-pdo \
-    php8.0-tokenizer \
-    php8.0-xml \
-    php8.0-xmlwriter \
-    php8.0-curl \
-    php8.0-zip \
-    php8.0-sqlite3 \
-    php8.0-mysql \
-    php8.0-pgsql \
-    libapache2-mod-php8.0
+    php8.3 \
+    php8.3-bcmath \
+    php8.3-ctype \
+    php8.3-fpm \
+    php8.3-mbstring \
+    php8.3-pdo \
+    php8.3-tokenizer \
+    php8.3-xml \
+    php8.3-xmlwriter \
+    php8.3-curl \
+    php8.3-zip \
+    php8.3-sqlite3 \
+    php8.3-mysql \
+    php8.3-pgsql \
+    libapache2-mod-php8.3
 
 # Download the Azuriom installer
 RUN curl -L https://github.com/Azuriom/AzuriomInstaller/releases/latest/download/AzuriomInstaller.zip -o /tmp/AzuriomInstaller.zip
