@@ -1,14 +1,11 @@
 #!/bin/bash
 
-PLATFORMS="linux/amd64,linux/arm/v7,linux/arm64/v8,linux/ppc64le"
+PLATFORMS="linux/amd64,linux/arm64"
 
 echo "Where does the Dockerfile is located:"
 read path
 
-echo "How do you want to name the image:"
-read name
-
-echo "Which tag do you want to use:"
+echo "Which tag do you want to use (e.g. user/repository:tag):"
 read tag
 
 echo "Additional docker build arguments (e.g. --build-arg ARG=VALUE):"
@@ -22,6 +19,6 @@ if [ "$push" == "y" ]; then
 fi
 
 echo "Building image..."
-docker buildx build --platform $PLATFORMS $build_args -t $name:$tag $path
+docker buildx build --platform $PLATFORMS $build_args -t $tag $path
 
 echo "Done!"
