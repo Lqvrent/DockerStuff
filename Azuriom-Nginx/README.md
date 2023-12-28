@@ -39,5 +39,5 @@ docker build -t azuriom-nginx:local .
 
 ## 📝 Notes
 - This image is NOT meant to be used in production, it is only for testing purposes.
-- This image was tested with PHP 8.0, Nginx 1.18 and Azuriom v1.0.15, more recent versions may work but are not guaranteed to work.
+- This image was tested with PHP 8.3, Nginx 1.18 and Azuriom v1.1.17, more recent versions may work but are not guaranteed to work.
 - This image does NOT include a database. You will need to provide one yourself (or use the [bundle](https://github.com/Lqvrent/DockerStuff/tree/main/Azuriom-Bundle)).
