@@ -3,7 +3,6 @@ services:
   postgres:
     image: postgres:15-alpine
     restart: always
-    container_name: Postgres
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: 123456
@@ -18,7 +17,6 @@ services:
   azuriom:
     image: lqvrent/azuriom-apache:latest
     restart: always
-    container_name: Azuriom
     volumes:
       - azuriom-bdl-data:/var/www/azuriom
     depends_on:
