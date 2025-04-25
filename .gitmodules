@@ -1,0 +1,4 @@
+[submodule "fluse-rcon-io"]
+	path = fluse-rcon-io
+	url = https://github.com/fluse/rcon-io
+	branch = main
